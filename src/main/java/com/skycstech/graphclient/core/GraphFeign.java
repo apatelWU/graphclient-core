@@ -263,7 +263,7 @@ public class GraphFeign {
             return executeRequest(requestSpec, method);
         }
 
-        private HttpGraphQlClient getHttpGraphQlClient(Method method, Map<ParamType, List<ParamInfo>> params) {
+        private synchronized HttpGraphQlClient getHttpGraphQlClient(Method method, Map<ParamType, List<ParamInfo>> params) {
             applyConfiguration(method, params);
             return this.builder.build();
         }
