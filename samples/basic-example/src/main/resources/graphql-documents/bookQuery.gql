@@ -1,0 +1,13 @@
+# noinspection GraphQLUnresolvedReference
+query bookDetails($bookId: ID!) {
+    bookById(id: $bookId) {
+        id
+        name
+        pageCount
+        author {
+            id
+            firstName
+            lastName
+        }
+    }
+}
